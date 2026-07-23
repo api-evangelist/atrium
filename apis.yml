@@ -1,8 +1,30 @@
 aid: atrium
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/atrium.png
 name: Atrium
-description: Atrium is a company surfaced as a portfolio company of a16z, bullpen-capital, electric-capital
-  and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the
-  enrichment pipeline.
+description: >-
+  Atrium is a sales-effectiveness and sales-performance business intelligence
+  platform for revenue teams. It continuously monitors sales KPIs to surface
+  anomalies in rep and team performance, detects which behaviors and activities
+  are driving (or dragging) output, and delivers AI-powered coaching
+  recommendations to managers and reps. The product connects directly to
+  Salesforce, HubSpot, data warehouses, and communication tools rather than
+  exposing a public developer API. Founded in San Francisco by Jason Heidema
+  (CEO) and Peter Kazanjy and backed by Andreessen Horowitz (a16z), Bullpen
+  Capital, and Electric Capital, Atrium was acquired by Fullcast in 2025 and is
+  now offered as Fullcast Performance; atriumhq.com redirects to fullcast.com
+  and only the customer application login at app.atriumhq.com remains on the
+  Atrium domain.
 url: https://raw.githubusercontent.com/api-evangelist/atrium/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,13 +32,20 @@ x-backed-by:
 - a16z
 - bullpen-capital
 - electric-capital
+x-acquired-by: fullcast
 x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
+- Sales
+- Analytics
+- Business Intelligence
+- Sales Performance
+- RevOps
+- CRM
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -24,5 +53,14 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/atrium-domain-security.yml
 - type: Website
   url: https://www.atriumhq.com
+- type: Login
+  url: https://app.atriumhq.com/auth/login
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
