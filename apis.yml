@@ -37,7 +37,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-18'
+modified: '2026-08-13'
 tags:
 - Company
 - Sales
@@ -55,12 +55,32 @@ maintainers:
 common:
 - type: DomainSecurity
   url: security/atrium-domain-security.yml
+- type: Lifecycle
+  url: lifecycle/atrium-lifecycle.yml
+- type: LLMsTxt
+  url: llms/atrium-llms.txt
 - type: Website
   url: https://www.atriumhq.com
 - type: Login
   url: https://app.atriumhq.com/auth/login
 x-enrichment:
-  date: '2026-07-19'
-  status: backfilled
+  date: '2026-08-13'
+  status: minimal
+  artifacts_added: 6
   pass: local-v1
-  note: backfilled from .gitignore signal + verified work evidence
+x-coverage:
+  state: none
+  reason: defunct
+  detail: >-
+    Atrium was acquired by Fullcast and now ships as Fullcast Performance — every path on
+    atriumhq.com, including /.well-known/*, answers a blanket HTTP 301 to
+    https://www.fullcast.com/product/fullcast-performance/, and the only Atrium host still
+    resolving is the customer application login at app.atriumhq.com.
+  evidence:
+  - url: https://www.atriumhq.com/
+    status: 301
+  - url: https://app.atriumhq.com/.well-known/agent-card.json
+    status: 404
+  - url: https://docs.atriumhq.com/
+    status: 0
+  checked: '2026-08-13'
