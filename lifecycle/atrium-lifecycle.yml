@@ -1,0 +1,49 @@
+generated: '2026-08-13'
+method: probed
+source: >-
+  live HTTP redirect chain from atriumhq.com plus the acquirer's product page at
+  https://www.fullcast.com/product/fullcast-performance/
+scope: product-and-brand-lifecycle
+note: >-
+  Atrium has no API versioning, deprecation or SLA policy to record because it never
+  published a developer API. What this file records instead is the lifecycle event that
+  now governs everything on this domain: Atrium was acquired by Fullcast (2025) and the
+  product ships as Fullcast Performance. Every marketing path on atriumhq.com answers a
+  blanket HTTP 301 to the acquirer's product page; only the customer application login at
+  app.atriumhq.com still serves from the Atrium domain.
+status: absorbed-by-acquirer
+successor:
+  company: Fullcast
+  product: Fullcast Performance
+  url: https://www.fullcast.com/product/fullcast-performance/
+  support: https://support.fullcast.com/performance
+  catalog_entry: all/fullcast
+  note: >-
+    The API surface (Fullcast Assistant API, Fullcast MCP Server) is published by Fullcast
+    on fullcast.com and is profiled under the fullcast entry. It is deliberately NOT
+    mirrored here — it is the acquirer's contract, not Atrium's.
+surviving_hosts:
+- host: app.atriumhq.com
+  role: customer application login
+  public_api: false
+retired_hosts:
+- www.atriumhq.com   # 301 to acquirer
+- support.atriumhq.com  # 301 to support.fullcast.com/performance
+versioning: null
+deprecation: null
+sla: null
+status_page: null
+deprecated_operations: []
+evidence:
+- url: https://atriumhq.com/
+  status: 301
+  location: https://www.atriumhq.com/
+- url: https://www.atriumhq.com/
+  status: 301
+  location: https://www.fullcast.com/product/fullcast-performance/
+- url: https://support.atriumhq.com/
+  status: 200
+  final_url: https://support.fullcast.com/performance
+- url: https://app.atriumhq.com/
+  status: 302
+  location: https://app.atriumhq.com/auth/login

@@ -1,0 +1,58 @@
+generated: '2026-08-13'
+method: probed
+source: live GET of /.well-known/* on every host named in apis.yml
+note: >-
+  No .well-known document is served on any Atrium host. www.atriumhq.com answers every
+  path — including every /.well-known/* path — with a blanket HTTP 301 to
+  https://www.fullcast.com/product/fullcast-performance/ (the acquirer's product page for
+  the former Atrium product), so a naive follow-redirect probe reports HTTP 200 with an
+  HTML marketing page. That is a soft-200, not a document. app.atriumhq.com, the customer
+  application host that still resolves, returns a genuine HTTP 404 with an empty JSON body
+  on every path. NO WellKnown, SecurityTxt or APICatalog pointer is emitted from this file:
+  every probe is a recorded absence.
+hosts:
+- host: www.atriumhq.com
+  behavior: blanket-301-to-acquirer
+  redirect_target: https://www.fullcast.com/product/fullcast-performance/
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+  - path: /.well-known/openid-configuration
+    status: 301
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+  - path: /.well-known/api-catalog
+    status: 301
+  - path: /.well-known/ai-plugin.json
+    status: 301
+  - path: /.well-known/agent-card.json
+    status: 301
+  - path: /.well-known/agent.json
+    status: 301
+  - path: /llms.txt
+    status: 301
+- host: app.atriumhq.com
+  behavior: real-404
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+hosts_that_do_not_resolve:
+- api.atriumhq.com
+- docs.atriumhq.com
+- developer.atriumhq.com
+- status.atriumhq.com
+- trust.atriumhq.com

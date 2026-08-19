@@ -1,0 +1,16 @@
+generated: '2026-08-13'
+method: searched
+source: https://www.atriumhq.com/pricing
+plan_count: 0
+plans: []
+note: >-
+  Atrium publishes no pricing of its own. https://www.atriumhq.com/pricing returns HTTP 301
+  to https://www.fullcast.com/product/fullcast-performance/ — the acquirer's product page —
+  as does every other path on the domain. Pricing for the successor product is published by
+  Fullcast and is recorded under the fullcast catalog entry; it is not restated here because
+  it is not Atrium's published price. No Pricing pointer is emitted from this file.
+evidence:
+- url: https://www.atriumhq.com/pricing
+  status: 301
+- url: https://www.atriumhq.com/plans
+  status: 301

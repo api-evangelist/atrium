@@ -1,0 +1,27 @@
+generated: '2026-08-13'
+method: searched
+source: >-
+  npm (registry.npmjs.org), PyPI, RubyGems, plus a web search of the Atrium (atriumhq.com)
+  documentation and support surface
+package_count: 0
+packages: []
+note: >-
+  Atrium (atriumhq.com, the sales-performance analytics platform) publishes no first-party
+  client library in any public registry. No Packages or SDKs pointer is emitted from this
+  file — an empty list is an honest zero, not an SDK surface.
+namesake_warning: >-
+  The name "atrium" is heavily overloaded in public package registries and MUST NOT be
+  attributed to this company. Do not attach any of the following in a later round:
+  (1) the MX Atrium API SDKs (atrium-go, atrium-ruby, atrium-python, atrium-php under the
+  github.com/mxenabled org) — those belong to MX, a financial-data aggregator, and are
+  documented at docs.mx.com/api-reference/atrium/; (2) atriumsports-sdk on PyPI, which
+  belongs to Atrium Sports; (3) npm "atrium", which self-describes as "This is a
+  placeholder project for now." and is unrelated to any of the above.
+evidence:
+- url: https://registry.npmjs.org/atriumhq
+  status: 404
+- url: https://pypi.org/pypi/atriumhq/json
+  status: 404
+- url: https://registry.npmjs.org/atrium
+  status: 200
+  verdict: unrelated placeholder package, not first-party

@@ -1,0 +1,23 @@
+generated: '2026-08-13'
+method: searched
+source: >-
+  Atrium public surface (atriumhq.com, support.atriumhq.com) — both now redirect to the
+  acquirer; no developer documentation exists on any Atrium host
+limit_count: 0
+limits: []
+headers: []
+note: >-
+  No rate limits are documented because Atrium publishes no developer API. There is no
+  reference, no spec and no docs host on the Atrium domain: api., docs., developer.,
+  status. and trust.atriumhq.com do not resolve in DNS, and every marketing path 301s to
+  https://www.fullcast.com/product/fullcast-performance/. This is a recorded absence, not
+  an unenforced limit — no RateLimits pointer is emitted from this file.
+evidence:
+- url: https://docs.atriumhq.com/
+  status: 0
+  detail: NXDOMAIN — host does not resolve
+- url: https://api.atriumhq.com/
+  status: 0
+  detail: NXDOMAIN — host does not resolve
+- url: https://www.atriumhq.com/
+  status: 301
