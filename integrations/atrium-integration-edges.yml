@@ -1,16 +1,32 @@
 generated: '2026-10-12'
-method: none
+method: searched
 source:
 - https://zapier.com/apps/atrium/integrations
 - https://n8n.io/integrations/atrium/
 - https://composio.dev/toolkits/atrium
 - https://monid.ai/tools/atrium
 checked:
+- https://aws.amazon.com/marketplace/
 - https://composio.dev/toolkits/atrium
 - https://monid.ai/tools/atrium
 - https://n8n.io/integrations/atrium/
 - https://zapier.com/apps/atrium/integrations
 summary: null
 marketplace_apps: []
-edges: []
+edges:
+- partner_name: AWS Marketplace
+  partner: amazon-web-services
+  partner_match: aggregator
+  type: marketplace
+  marketplace: aws-marketplace
+  channel: distribution
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://aws.amazon.com/marketplace/seller-profile?id=seller-ithuragiq66f4
+  listing_count: 1
+  apps:
+  - Atrium | Sales Performance Management
+  seller_name: Atrium
+  detected_by: sweep-cloud-marketplaces.py
+  detected: '2026-10-13'
 templates: []
