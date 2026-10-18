@@ -6,11 +6,14 @@ source:
 - https://composio.dev/toolkits/atrium
 - https://monid.ai/tools/atrium
 checked:
+- google-workspace/integrations/google-workspace-integration-edges.yml
 - https://aws.amazon.com/marketplace/
 - https://composio.dev/toolkits/atrium
 - https://monid.ai/tools/atrium
 - https://n8n.io/integrations/atrium/
 - https://zapier.com/apps/atrium/integrations
+- microsoft-teams/integrations/microsoft-teams-integration-edges.yml
+- slack/integrations/slack-integration-edges.yml
 summary: null
 marketplace_apps: []
 edges:
@@ -29,4 +32,57 @@ edges:
   seller_name: Atrium
   detected_by: sweep-cloud-marketplaces.py
   detected: '2026-10-13'
+- partner_name: Google Workspace (own)
+  partner: google-workspace
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://workspace.google.com/marketplace/app/atrium/82978052357
+  mirror_of: google-workspace/integrations/google-workspace-integration-edges.yml
+  apps:
+  - Atrium
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: Google Workspace app
+- partner_name: Microsoft Teams (own)
+  partner: microsoft-teams
+  partner_match: mirror
+  mirror_match: domain+product
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://appsource.microsoft.com/en-us/product/office/WA200008833
+  mirror_of: microsoft-teams/integrations/microsoft-teams-integration-edges.yml
+  apps:
+  - Atrium
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: Microsoft Teams app
+  publisher_verified:
+  - Microsoft 365 Certified
+- partner_name: Slack (own)
+  partner: slack
+  partner_match: mirror
+  mirror_match: domain+product
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://slack.com/marketplace/A01JKGJB30S-atrium
+  mirror_of: slack/integrations/slack-integration-edges.yml
+  apps:
+  - Atrium
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: Slack app
 templates: []
